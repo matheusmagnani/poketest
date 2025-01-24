@@ -2,22 +2,18 @@ Pokedex style app.
 
 # RFs (Requisitos Funcionais)
 
-<<<<<<< HEAD
 - [ ] -> Deve ser possivel um novo usuário se cadastrar na aplicaçao.
 - [ ] -> Deve ser possivel que um usuário faça login na aplicaçao.
 - [ ] -> Deve ser possivel buscar um pokémon pelo nome.
 - [ ] -> Deve ser possivel listar os pokémons cadastrados.
-=======
 [x] -> Deve ser possivel um novo usuário se cadastrar na aplicaçao.
 [ ] -> Deve ser possivel que um usuário faça login na aplicaçao.
 [ ] -> Deve ser possivel buscar um pokémon pelo nome.
 [ ] -> Deve ser possivel listar os pokémons cadastrados.
->>>>>>> 33b5120 (feat: it is now possible to register a user)
 
 
 # RN (Regras de Regócio)
 
-<<<<<<< HEAD
 - [ ] -> Não deve permitir a inserção de pokémons duplicados.
 - [ ] -> Apenas usuários autenticados podem cadastrar Pokémons.
 - [ ] -> O usuário deve fornecer um e-mail e uma senha para cadastrar.
@@ -27,9 +23,6 @@ Pokedex style app.
 
 # RNFs (Regras Nao Funcionais)
 
-- [ ] -> A senha para cadastro deve ser armazenada de forma segura utilizando hashing.
-- [ ] -> As rotas de Login de Usuário, Cadastrar Pokémon e Listar Pokémons devem ser verificadas com um Token JWT
-=======
 [ ] -> Não deve permitir a inserção de pokémons duplicados.
 [ ] -> Apenas usuários autenticados podem cadastrar Pokémons.
 [x] -> O usuário deve fornecer um e-mail e uma senha para cadastrar.
@@ -41,4 +34,3 @@ Pokedex style app.
 
 [x] -> A senha para cadastro deve ser armazenada de forma segura utilizando hashing.
 [ ] -> As rotas de Login de Usuário, Cadastrar Pokémon e Listar Pokémons devem ser verificadas com um Token JWT
->>>>>>> 33b5120 (feat: it is now possible to register a user)
