@@ -1,7 +1,12 @@
-import { Application } from "express";
+import { Router } from "express";
+import { Login } from './login'
+import { Register } from "./register";
 
-export async function userRoutes(app: Application) {
-  app.get('/users', (req, res) => {
-    res.send('Ola caçador de pokemon')
-  })
-}
+const usersRoutes = Router();
+
+usersRoutes.post('/register', Register)
+usersRoutes.post('/login', Login)
+
+
+
+export default usersRoutes;
