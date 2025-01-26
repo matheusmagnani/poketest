@@ -1,18 +1,18 @@
 import { hash } from "bcryptjs";
-import { UsersRepository } from "../repositories/users-repository";
+import { UserRepository } from "../repositories/user-repository";
 
-interface CreateUserRequest {
+interface RegisterUseCaseRequest {
   email: string;    
   password: string;
 }
 
-export class RegisterUserUseCase {
-  constructor(private userRepository: UsersRepository) {}
+export class RegisterUseCase {
+  constructor(private userRepository: UserRepository) {}
 
-  async execute({email,password}: CreateUserRequest) {
-    const existingUser = await this.userRepository.findByEmail(email)
+  async execute({email,password}: RegisterUseCaseRequest) {
+    const useralreadyexists = await this.userRepository.findByEmail(email)
     
-    if(existingUser) {
+    if(useralreadyexists) {
       throw new Error('Usuário já cadastrado.')
     }
 

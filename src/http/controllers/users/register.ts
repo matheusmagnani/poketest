@@ -1,22 +1,22 @@
 import { Request, Response } from "express";
-import { UsersRepository } from "../../../repositories/users-repository";
-import { RegisterUserUseCase } from "../../../use-caes/register";
+import { UserRepository } from "../../../repositories/user-repository";
+import { RegisterUseCase } from "../../../use-caes/register";
 
 export async function Register(req: Request, res: Response) {  
   const { email, password } = req.body
 
   if(!email || !password){
-    return res.status(400).json({message: 'Preencha os campos email e senha.'})
+    return res.status(400).json({error: "E-mail ou senha inválidos."})
   }
 
-  const usersRepository = new UsersRepository()
-  const createUserUseCase = new RegisterUserUseCase(usersRepository)
+  const usersRepository = new UserRepository()
+  const registerUseCase = new RegisterUseCase(usersRepository)
 
   try {
-    await createUserUseCase.execute({ email, password})
+    await registerUseCase.execute({ email, password})
     return res.status(201).json({message: 'Usuário Cadastrado com sucesso'})
   } catch (error: any) {
-    return res.status(400).json({message: error.message})
+    return res.status(400).json({error: error.message})
   }
 
 }

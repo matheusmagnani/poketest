@@ -1,10 +1,12 @@
 import { Router } from "express";
 import { PokemonRegister } from "./pokemon-register";
 import { SearchPokemon } from "./search-pokemon";
+import { verifyJWT } from "../../middlewares/verify-jwt";
 
 const pokemonRoutes = Router()
 
-pokemonRoutes.post('', PokemonRegister)
-pokemonRoutes.get('/list', SearchPokemon)
+pokemonRoutes.get('/list', verifyJWT, SearchPokemon)
+
+pokemonRoutes.post('', verifyJWT, PokemonRegister)
 
 export default pokemonRoutes
