@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { PokemonRepository } from "../../../repositories/pokemon-repository";
-import { CreatePokemonUseCase } from "../../../use-case/pokemon-create";
+import { RegisterPokemonUseCase } from "../../../use-case/pokemon-create";
 
 export async function PokemonRegister(req: Request, res: Response) {  
   const { name } = req.body
@@ -13,7 +13,7 @@ export async function PokemonRegister(req: Request, res: Response) {
   }
   
   const pokemonRepository = new PokemonRepository()
-  const createPokemonUseCase = new CreatePokemonUseCase(pokemonRepository)
+  const createPokemonUseCase = new RegisterPokemonUseCase(pokemonRepository)
   
   try {
     const pokeApi = `https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`
@@ -22,7 +22,15 @@ export async function PokemonRegister(req: Request, res: Response) {
     
     return res.status(201).json(pokemon)
   } catch (error: any) {
-    return res.status(404).json({error: "pokemon não encontrado."})
-  }
+    if (error.name === "DuplicateError") {
+      return res.status(401).json({ error: error.message });
+    }
 
+    if (error.name === "NotFoundError") {
+      return res.status(404).json({ error: error.message });
+    }
+
+    // Para outros erros não tratados explicitamente
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
 }

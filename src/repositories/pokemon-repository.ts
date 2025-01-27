@@ -1,7 +1,6 @@
 import { prisma } from "../lib/prisma";
 
 interface PokemonData {
-  id: number,
   name: string,
   userId: string | undefined,
   height: number,
@@ -17,7 +16,6 @@ export class PokemonRepository {
   public async create(pokemonData: PokemonData) {
     return prisma.pokemon.create({
       data: {
-      id: pokemonData.id,
       name: pokemonData.name,
       userId: pokemonData.userId,
       height: pokemonData.height,
