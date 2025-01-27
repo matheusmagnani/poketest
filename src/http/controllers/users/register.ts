@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { UserRepository } from "../../../repositories/user-repository";
-import { RegisterUseCase } from "../../../use-caes/register";
+import { RegisterUseCase } from "../../../use-case/user-register";
 
 export async function Register(req: Request, res: Response) {  
   const { email, password } = req.body

@@ -13,3 +13,17 @@ model User {
   email String @unique
   password_hash String
 }
+
+model Pokemon {
+  id         Int       @id
+  name       String
+  userId     String?
+  height     Int
+  weight     Int
+  image      String
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  abilities  String[] 
+
+  @@unique([name, userId])
+}

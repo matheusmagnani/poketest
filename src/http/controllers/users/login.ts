@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { LoginUseCase } from "../../../use-caes/login";
+import { LoginUseCase } from "../../../use-case/user-login";
 import { UserRepository } from "../../../repositories/user-repository";
 
 export async function Login(req: Request, res: Response){  
@@ -15,6 +15,7 @@ export async function Login(req: Request, res: Response){
     const loginUseCase = new LoginUseCase(userRepository)
 
     const token = await loginUseCase.execute({ email, password });
+    
     res.status(200).json({ token: token});
   } catch (error) {
     return res.status(401).json({error: 'Credenciais inválidas.'})
