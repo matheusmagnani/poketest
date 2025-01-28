@@ -1,11 +1,25 @@
-# Pokedex style app.
+<h1 align= center> Pokedex style app Beckend.</h1>
+
+<br>
+
+<h3>Este teste técnico consiste no desenvolvimento de uma API REST em Node.js para integrar-se à <a href="https://pokeapi.co">PokéAPI</a> e armazenar dados em um banco de dados PostgreSQL. O objetivo é avaliar conhecimentos em:</h3>
+
+<ul>
+  <li>Desenvolvimento de APIs REST com Node.js e Express</li>
+  <li>Integração de API externa utilizando Axios</li>
+  <li>Persistência de dados em PostgreSQL usando Prisma</li>
+  <li>Paginação e filtros em consultas de banco de dados</li>
+  <li>Boas práticas de estruturação de código e organização de projeto</li>
+  <li>Tratamento de erros e respostas HTTP padronizadas</li>
+  <li>Autenticação e autorização com JWT</li>
+</ul>
 
 # RFs (Requisitos Funcionais)
 
 - [x] -> Deve ser possivel um novo usuário se cadastrar na aplicaçao.
 - [x] -> Deve ser possivel que um usuário faça login na aplicaçao.
 - [x] -> Deve ser possivel cadastrar um pokémon buscando pelo nome.
-- [ ] -> Deve ser possivel listar os pokémons cadastrados.
+- [x] -> Deve ser possivel listar os pokémons cadastrados.
 
 
 # RN (Regras de Regócio)
@@ -23,3 +37,23 @@
 
 - [x] -> A senha para cadastro deve ser armazenada de forma segura utilizando hashing.
 - [x] -> As rotas de Cadastrar Pokémon e Listar Pokémons devem ser verificadas com um Token JWT
+
+<h3>Tecnologias Utilizadas</h3>
+
+<ul>
+  <li>Node.js (v14+)</li>
+  <li>Typescript</li>
+  <li>Express - Framework para API REST</li>
+  <li>Prisma - ORM para PostgreSQL</li>
+  <li>PostgreSQL - Banco de dados relacional</li>
+  <li>Axios - Cliente HTTP para integração com a PokéAPI</li>
+  <li>dotenv - Gerenciamento de variáveis de ambiente</li>
+  <li>jsonwebtoken (JWT) - Autenticação e autorização</li>
+  <li>bcrypt - Hashing seguro de senhas</li>
+</ul>
+
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=nodejs,ts,prisma,express,docker" />
+  </a>
+</p>

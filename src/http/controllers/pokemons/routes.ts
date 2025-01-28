@@ -5,7 +5,7 @@ import { verifyJWT } from "../../middlewares/verify-jwt";
 
 const pokemonRoutes = Router()
 
-pokemonRoutes.get('/list', verifyJWT, SearchPokemon)
+pokemonRoutes.get('', verifyJWT, SearchPokemon)
 
 pokemonRoutes.post('', verifyJWT, PokemonRegister)
 

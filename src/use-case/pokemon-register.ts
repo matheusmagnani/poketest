@@ -4,7 +4,9 @@ import { PokemonRepository } from "../repositories/pokemon-repository";
 interface RegisterPokemonUseCaseRequest{
   name: string;
   pokeApi: string; 
-  userId: string | undefined; 
+  userId: string | undefined;
+  page?: number;
+  limit?: number;
 }
 
 export class RegisterPokemonUseCase {
@@ -29,6 +31,8 @@ export class RegisterPokemonUseCase {
         weight: data.weight,
         abilities: data.abilities.map((ability: { ability: { name: string } }) => ability.ability.name),
         image: data.sprites.front_default,
+        page: data.page,
+        limit: data.limit,
         createdAt: new Date(), 
         updatedAt: new Date(),
       };

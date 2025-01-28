@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { PokemonRepository } from "../../../repositories/pokemon-repository";
-import { RegisterPokemonUseCase } from "../../../use-case/pokemon-create";
+import { RegisterPokemonUseCase } from "../../../use-case/pokemon-register";
 
 export async function PokemonRegister(req: Request, res: Response) {  
   const { name } = req.body
