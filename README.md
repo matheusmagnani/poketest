@@ -38,6 +38,35 @@
 - [x] -> A senha para cadastro deve ser armazenada de forma segura utilizando hashing.
 - [x] -> As rotas de Cadastrar Pokémon e Listar Pokémons devem ser verificadas com um Token JWT
 
+## :books: Requisitos
+
+
+- [**Node.js**](https://nodejs.org/en/)
+- [**Npm**](https://www.npmjs.com)
+
+## Iniciando o projeto
+
+```bash
+
+  # Clonar o projeto:
+
+  $ git clone https://github.com/matheusmagnani/poketest
+
+  # Entrar no diretório web
+
+  $ cd poketest
+  
+   # Instalando as dependências
+   
+  $ npm install 
+
+  # Iniciar web
+
+  $ npm run forrest
+  
+
+```
+
 <h3>Tecnologias Utilizadas</h3>
 
 <ul>
@@ -56,4 +85,10 @@
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=nodejs,ts,prisma,express,docker" />
   </a>
+</p>
+
+<br>
+
+<p align="center">
+  <img src="http://img.shields.io/static/v1?label=STATUS&message=PRONTO&color=GREEN&style=for-the-badge"/>
 </p>
